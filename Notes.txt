@@ -1,0 +1,6 @@
+https://docs.djangoproject.com/en/1.11/topics/install/#install-apache-and-mod-wsgi
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+https://docs.djangoproject.com/en/1.11/intro/tutorial01/
+
