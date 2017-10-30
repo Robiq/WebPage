@@ -4,3 +4,15 @@ https://docs.djangoproject.com/en/1.11/topics/install/#install-apache-and-mod-ws
 
 https://docs.djangoproject.com/en/1.11/intro/tutorial01/
 
+SU:
+admin
+robin@wub.no
+meいく'two'land!
+
+
+images.models:
+
+Add 'Preview'(default mix), 'Nature', 'People', and 'Urban' lists so you can easily display pictures. (to models)
+
+
+Templates can be referred to as 'appName/index.html'
