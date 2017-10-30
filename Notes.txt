@@ -13,6 +13,27 @@ meいく'two'land!
 images.models:
 
 Add 'Preview'(default mix), 'Nature', 'People', and 'Urban' lists so you can easily display pictures. (to models)
+	Add meta-class that orders by ID always!
 
 
 Templates can be referred to as 'appName/index.html'
+
+
+index.html = page for displaying images. Default = Preview, then can change to: Nature, Urban or People.
+
+img.html = page for displaying information about a single image, full screen!
+
+
+------------------------
+GIT
+---
+(Create)
+git checkout -b NAME
+
+(Switch)
+git checkout NAME
+
+(pull master)
+git pull origin master
+
+git push -u origin newLocalBranch

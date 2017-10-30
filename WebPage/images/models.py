@@ -32,3 +32,26 @@ class Image(models.Model):
 			comment = comment_en
 			
 		return name, comment
+
+	class Meta:
+		ordering = ['id']
+
+class Preview(models.Model):
+
+	class Meta:
+		ordering = ['id']
+
+class Nature(models.Model):
+
+	class Meta:
+		ordering = ['id']
+
+class People(models.Model):
+
+	class Meta:
+		ordering = ['id']
+
+class Urban(models.Model):
+
+	class Meta:
+		ordering = ['id']

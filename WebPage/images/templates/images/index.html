@@ -1,0 +1,9 @@
+{% if photo_list %}
+    <ul>
+    {% for image in photo_list %}
+        <li><div><a href="/images/{{ image.id }}/">Image name: {{ image.name_en }}<br></a>Image date: {{ image.date }} <br>Image description: {{ image.comment_en }}</div></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No photos are available.</p>
+{% endif %}
