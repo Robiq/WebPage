@@ -10,18 +10,20 @@ robin@wub.no
 meいく'two'land!
 
 
-images.models:
-
-Add 'Preview'(default mix), 'Nature', 'People', and 'Urban' lists so you can easily display pictures. (to models)
-	Add meta-class that orders by ID always!
-
-
 Templates can be referred to as 'appName/index.html'
 
 
 index.html = page for displaying images. Default = Preview, then can change to: Nature, Urban or People.
 
 img.html = page for displaying information about a single image, full screen!
+
+
+Path goes in as static objects in html template!
+
+use:
+	i = Image(xxxx)
+	i.get_tag_display()
+To display full tag name
 
 
 ------------------------

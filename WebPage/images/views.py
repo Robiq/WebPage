@@ -4,11 +4,12 @@ from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 
 # Create your views here.
-from .models import Image
+from .models import Image, Tag
 
 # /images/
 def index(request):
-	photo_list = get_list_or_404(Preview)
+	tags = Tag.objects.filter(tag='pr')
+	photo_list = get_list_or_404(Image, tags__in=tags)
 	context = {	'photo_list': photo_list }
 	return render(request, 'images/index.html', context)
 
@@ -19,18 +20,21 @@ def image(request, id):
 
 #/images/nature
 def nature(request):
-	photo_list = get_list_or_404(Nature)
+	tags = Tag.objects.filter(tag='na')
+	photo_list = get_list_or_404(Image, tags__in=tags)
 	context = {	'photo_list': photo_list }
 	return render(request, 'images/index.html', context)
 
 #/images/people
 def people(request):
-	photo_list = get_list_or_404(People)
+	tags = Tag.objects.filter(tag='pe')
+	photo_list = get_list_or_404(Image, tags__in=tags)
 	context = {	'photo_list': photo_list }
 	return render(request, 'images/index.html', context)
 
 #/images/urban
 def urban(request):
-	photo_list = get_list_or_404(Urban)
+	tags = Tag.objects.filter(tag='ur')
+	photo_list = get_list_or_404(Image, tags__in=tags)
 	context = {	'photo_list': photo_list }
 	return render(request, 'images/index.html', context)
