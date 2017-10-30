@@ -10,6 +10,7 @@ class Tag(models.Model):
 		('na', 'Nature'),
 		('pe', 'People'),
 		('ur', 'Urban'),
+		('ot', 'Other'),
 		)
 	tag = models.CharField(max_length=2, choices=TAG_OPTS)
 

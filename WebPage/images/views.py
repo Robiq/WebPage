@@ -38,3 +38,10 @@ def urban(request):
 	photo_list = get_list_or_404(Image, tags__in=tags)
 	context = {	'photo_list': photo_list }
 	return render(request, 'images/index.html', context)
+
+	#/images/urban
+def other(request):
+	tags = Tag.objects.filter(tag='ot')
+	photo_list = get_list_or_404(Image, tags__in=tags)
+	context = {	'photo_list': photo_list }
+	return render(request, 'images/index.html', context)

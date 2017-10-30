@@ -12,21 +12,16 @@ meいく'two'land!
 
 Templates can be referred to as 'appName/index.html'
 
-
-index.html = page for displaying images. Default = Preview, then can change to: Nature, Urban or People.
-
-img.html = page for displaying information about a single image, full screen!
-
-
-Path goes in as static objects in html template!
-
-use:
-	i = Image(xxxx)
-	i.get_tag_display()
-To display full tag name
-
+index.html = page for displaying images. Default = Preview, then can change to: Nature, Urban or People in sidebar
 
 ------------------------
+TODO:
+-----
+- Change Navigation menu look
+- Change information about images look
+- Add main page!
+- Add post support
+----------------------------
 GIT
 ---
 (Create)

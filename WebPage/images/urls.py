@@ -15,4 +15,6 @@ urlpatterns = [
     url(r'people/$', views.people, name="people"), 
     #/images/Urban
     url(r'urban/$', views.urban, name="urban"),
+    #/images/Other
+    url(r'other/$', views.other, name="other"),
 ]
