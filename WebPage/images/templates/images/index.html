@@ -1,21 +1,76 @@
+<!DOCTYPE HTML>
+<!--
+	Lens by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 {% load static %}
+<html>
+	<head>
+		<title>Lens by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'images/assets/css/main.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="{% static 'images/assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-loading-0 is-loading-1 is-loading-2">
 
-<link rel="stylesheet" type="text/css" href="{% static 'images/style.css' %}" />
+		<!-- Main -->
+			<div id="main">
 
-{% if photo_list %}
-    <ul>
-    {% for image in photo_list %}
-        <li><div>
-        	Image name: <a href="{% url 'images:image'  image.id %}">{{ image.name_en }}<br></a>
-	        Image date: {{ image.date }} <br>
-	        Image description: {{ image.comment_en }}<br>
-	        Image tags:<br>
-	        {% for tag in image.tags.all %}
-	        	<li style="margin-left: 15px;">{{ tag.get_tag_display }}</li>
-	        {% endfor %}
-        </div></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No photos are available.</p>
-{% endif %}
+				<!-- Header -->
+					<header id="header">
+						<h1>Lens</h1>
+						<p>Just another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+						</ul>
+					</header>
+
+				<!-- Thumbnail -->
+					<section id="thumbnails">
+						<article>
+							<a class="thumbnail" href="{% static 'images/images/fulls/01.jpg' %}" data-position="left center"><img src="{% static 'images/images/thumbs/01.jpg' %}" alt="" /></a>
+							<h2>Diam tempus accumsan</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="{% static 'images/images/fulls/02.jpg' %}"><img src="{% static 'images/images/thumbs/02.jpg' %}" alt="" /></a>
+							<h2>Vivamus convallis libero</h2>
+							<p>Sed velit lacus, laoreet at venenatis convallis in lorem tincidunt.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="{% static 'images/images/fulls/03.jpg' %}" data-position="top center"><img src="{% static 'images/images/thumbs/03.jpg' %}" alt="" /></a>
+							<h2>Nec accumsan enim felis</h2>
+							<p>Maecenas eleifend tellus ut turpis eleifend, vitae pretium faucibus.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="{% static 'images/images/fulls/04.jpg' %}"><img src="{% static 'images/images/thumbs/04.jpg' %}" alt="" /></a>
+							<h2>Donec maximus nisi eget</h2>
+							<p>Tristique in nulla vel congue. Sed sociis natoque parturient nascetur.</p>
+						</article>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'images/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'images/assets/js/skel.min.js' %}"></script>
+			<!--[if lte IE 8]><script src="{% static 'images/assets/js/ie/respond.min.js' %}"></script><![endif]-->
+			<script src="{% static 'images/assets/js/main.js' %}"></script>
+
+	</body>
+</html>

@@ -1,0 +1,21 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'images/style.css' %}" />
+
+{% if photo_list %}
+    <ul>
+    {% for image in photo_list %}
+        <li><div>
+        	Image name: <a href="{% url 'images:image'  image.id %}">{{ image.name_en }}<br></a>
+	        Image date: {{ image.date }} <br>
+	        Image description: {{ image.comment_en }}<br>
+	        Image tags:<br>
+	        {% for tag in image.tags.all %}
+	        	<li style="margin-left: 15px;">{{ tag.get_tag_display }}</li>
+	        {% endfor %}
+        </div></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No photos are available.</p>
+{% endif %}
