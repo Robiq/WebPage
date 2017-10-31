@@ -1,3 +1,4 @@
 #Blank for now
 *.sqlite3
 *.pyc
+*Notes.txt
