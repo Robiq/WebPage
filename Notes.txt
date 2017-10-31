@@ -42,7 +42,6 @@ index.html = page for displaying images. Default = Preview, then can change to: 
 TODO:
 -----
 - Fix centering of icons and menu
-- Add language switching
 - Change Navigation menu look
 - Change information about images look
 - Todo: make new secret Key

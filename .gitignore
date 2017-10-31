@@ -1,2 +1,3 @@
 #Blank for now
 *.sqlite3
+*.pyc
