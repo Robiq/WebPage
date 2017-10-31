@@ -12,6 +12,28 @@ robin@wub.no
 meいく'two'land!
 
 
+Prod server:
+	robin - me@...!
+
+	Pub iP: 13.71.128.20
+	virtualenv webpageenv
+	
+	Django SU:
+	robin - iGO2
+
+	Settings:
+	/home/robin/WebPage/WebPage/WebPage
+	Static:
+	/home/robin/WebPage/WebPage/static
+	Virtualenv:
+	/home/robin/WebPage /webpageenv
+
+	https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
+
+Virtualenv:
+virtualenv Webpageenv
+
+
 Templates can be referred to as 'appName/index.html'
 
 index.html = page for displaying images. Default = Preview, then can change to: Nature, Urban or People in sidebar
@@ -19,8 +41,11 @@ index.html = page for displaying images. Default = Preview, then can change to: 
 ------------------------
 TODO:
 -----
+- Fix centering of icons and menu
+- Add language switching
 - Change Navigation menu look
 - Change information about images look
+- Todo: make new secret Key
 - Add main page!
 - Add post support
 ----------------------------
@@ -39,9 +64,11 @@ git push -u origin newLocalBranch
 
 
 -----------------------
-python manage.py runserver 0:8000
+(When django changes)
+sudo systemctl restart gunicorn
 
-sudo systemctl stop apache2
-sudo systemctl start apache2
-sudo systemctl restart apache2
-sudo systemctl reload apache2 (doesnt drop connections)
+(whenever changes are made)
+sudo systemctl restart nginx
+
+
+)

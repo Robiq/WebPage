@@ -15,7 +15,7 @@ class Tag(models.Model):
 	tag = models.CharField(max_length=2, choices=TAG_OPTS)
 
 	def __str__(self):
-		return self.tag
+		return self.get_tag_display()
 
 class Image(models.Model):
 	id = models.AutoField(primary_key=True)

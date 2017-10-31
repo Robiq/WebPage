@@ -6,7 +6,7 @@
 -->
 {% load static %}
 {% static "/images" as baseUrl %}
-<html>
+<html lang="no">
 	<head>
 		<title>Robin Lunde</title>
 		<meta charset="utf-8" />
@@ -25,32 +25,33 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1 style="color: white;"> <a href="{% url 'images:index' %}">Photography</a></h1>
-						<div>By: Robin Lunde
+						<h1 style="color: white;"> <a href="{% url 'images:index' lang='no' %}">Fotografi</a></h1>
+						<div>Av: Robin Lunde
 							<!-- MENU-->
 							<div class="myMenu" ;>
 								<ul>
-									<a href="{% url 'images:nature' %}">Nature</a>	
+									<a href="{% url 'images:selection' cat='nature' lang='no' %}">Natur</a>	
 								</ul>
 								<ul>
-									<a href="{% url 'images:people' %}">People</a>	
+									<a href="{% url 'images:selection' cat='people' lang='no' %}">Portrett</a>	
 								</ul>
 								<ul>
-									<a href="{% url 'images:urban' %}">Urban</a>	
+									<a href="{% url 'images:selection' cat='urban' lang='no' %}">Urban</a>	
 								</ul>
 								<ul>
-									<a href="{% url 'images:other' %}">Other</a>	
+									<a href="{% url 'images:selection' cat='other' lang='no' %}">Andre</a>	
 								</ul>
 							</div>
 						</div>
-						<ul class="icons" style="color: white;">
+					</header>
+
+					<ul class="icons" style="color: white;">
 							<li><a href="https://www.instagram.com/robinlunde/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 							<li><a href="https://github.com/Robiq" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
 							<li><a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="icon fa-linkedin"><span class="label">Email</span></a></li>
-							<li><a href="mailto:robin@keio.jp" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-							<li><a href="mailto:robin@wub.no" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+							<li><a href="mailto:robin@wub.no" class="icon fa-envelope-o"><span class="label">Mail Private</span></a></li>
+							<li style="color: #FF7664;	opacity: 0.65;"><a href="mailto:robin@keio.jp" class="icon fa-envelope-o"><span class="label">Mail work</span></a></li>
 						</ul>
-					</header>
 
 				<!-- Thumbnail -->
 					<section id="thumbnails">
@@ -59,13 +60,13 @@
 								<article >
 									<a class="thumbnail" href="{{ baseUrl }}/images/fulls/{{ image.id }}.jpg" data-position="center"><img src="{{ baseUrl }}/images/thumbs/{{ image.id }}.jpg" alt="" /></a>
 									<div>
-										<h2 style="color: white;">  {{ image.name_en }}</h2>
+										<h2 style="color: white;">  {{ image.name_no }}</h2>
 										<div style="color: white;">
-											  Image date: {{ image.date }} <br>
-								        	  Image description: {{ image.comment_en }}<br>
-								        	  Image tags:
+											  Tatt: {{ image.date }}&emsp;Beskrivelse: {{ image.comment_no }}&emsp; Tags:	
 								        	{% for tag in image.tags.all %}
-								        		<li style="margin-left: 15px;">  {{ tag.get_tag_display }}</li>
+								        		 {% ifnotequal tag.get_tag_display "Preview" %}
+								        		 "{{ tag.get_tag_display }}"  
+								        		 {% endifnotequal %}
 								        	{% endfor %}
 								    </div>
 							    </div>
@@ -79,8 +80,14 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="copyright">
-							<li>&copy; Robin Lunde.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
+							<li>&copy; Robin Lunde.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li><br>
+							&emsp; <li><a href="{% url 'images:selection'  cat=cat lang='en' %}">ENGLISH</a></li>
+							<li><a href="{% url 'images:selection'  cat=cat lang='no' %}">NORSK</a></li>
+							<li><a href="{% url 'images:selection'  cat=cat lang='jp' %}">日本語</a></li>
 						</ul>
+						{% ifnotequal err '' %}
+							<h4 style="color: red;">{{ err }}</h4>
+						{% endifnotequal %}
 					</footer>
 
 			</div>

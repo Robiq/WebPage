@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<!--
+	Lens by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+{% load static %}
+{% static "/images" as baseUrl %}
+<html lang="jp">
+	<head>
+		<title>Robin Lunde</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{{ baseUrl }}/assets/css/main.css" />
+		<link rel="stylesheet" href="{{ baseUrl }}/assets/css/rob.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="{{ baseUrl }}/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading-0 is-loading-1 is-loading-2">
+
+		<!-- Main -->
+			<div id="main" style="background: #1344a0;">
+
+				<!-- Header -->
+					<header id="header">
+						<h1 style="color: white;"> <a href="{% url 'images:index' lang='jp' %}">写真術</a></h1>
+						<div>写真家: Robin Lunde (ルンダ　ロビン)
+							<!-- MENU-->
+							<div class="myMenu" ;>
+								<ul>
+									<a href="{% url 'images:selection' cat='nature' lang='jp' %}">景色</a>	
+								</ul>
+								<ul>
+									<a href="{% url 'images:selection' cat='people' lang='jp' %}">人</a>	
+								</ul>
+								<ul>
+									<a href="{% url 'images:selection' cat='urban' lang='jp' %}">都市</a>	
+								</ul>
+								<ul>
+									<a href="{% url 'images:selection' cat='other' lang='jp' %}">残り</a>	
+								</ul>
+							</div>
+						</div>
+					</header>
+
+					<ul class="icons" style="color: white;">
+							<li><a href="https://www.instagram.com/robinlunde/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/Robiq" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="icon fa-linkedin"><span class="label">Email</span></a></li>
+							<li><a href="mailto:robin@wub.no" class="icon fa-envelope-o"><span class="label">Mail Private</span></a></li>
+							<li style="color: #FF7664;	opacity: 0.65;"><a href="mailto:robin@keio.jp" class="icon fa-envelope-o"><span class="label">Mail work</span></a></li>
+						</ul>
+
+				<!-- Thumbnail -->
+					<section id="thumbnails">
+						{% if photo_list %}
+							{% for image in photo_list %}
+								<article >
+									<a class="thumbnail" href="{{ baseUrl }}/images/fulls/{{ image.id }}.jpg" data-position="center"><img src="{{ baseUrl }}/images/thumbs/{{ image.id }}.jpg" alt="" /></a>
+									<div>
+										<h2 style="color: white;">  {{ image.name_jp }}</h2>
+										<div style="color: white;">
+											  撮影日: {{ image.date }}&emsp;詳細: {{ image.comment_jp }}&emsp; 画像タグ:	
+								        	{% for tag in image.tags.all %}
+								        		 {% ifnotequal tag.get_tag_display "Preview" %}
+								        		 "{{ tag.get_tag_display }}"  
+								        		 {% endifnotequal %}
+								        	{% endfor %}
+								    </div>
+							    </div>
+								</article>
+							{% endfor %}
+							{% else %}
+							    <p>写真が見つかりません.</p>
+							{% endif %}
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Robin Lunde.</li><li>デサイン: <a href="http://html5up.net">HTML5 UP</a>.</li><br>
+							&emsp; <li><a href="{% url 'images:selection'  cat=cat lang='en' %}">ENGLISH</a></li>
+							<li><a href="{% url 'images:selection'  cat=cat lang='no' %}">NORSK</a></li>
+							<li><a href="{% url 'images:selection'  cat=cat lang='jp' %}">日本語</a></li>
+						</ul>
+						{% ifnotequal err '' %}
+							<h4 style="color: red;">{{ err }}</h4>
+						{% endifnotequal %}
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'images/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'images/assets/js/skel.min.js' %}"></script>
+			<!--[if lte IE 8]><script src="{% static 'images/assets/js/ie/respond.min.js' %}"></script><![endif]-->
+			<script src="{% static 'images/assets/js/main.js' %}"></script>
+
+	</body>
+</html>
