@@ -1,5 +1,4 @@
-@import url(font-awsome.min.css)
-
+@import url(font-awesome.min.css);
 /* Icon */
 .icon {
   text-decoration: none;
@@ -16,92 +15,117 @@
     display: none; 
 }
 
-ol, ul {
-  list-style: none;
-}
-
-ul {
-list-style: disc;
-margin: 0 0 1.25em 0;
-padding-left: 1em; }
-ul li {
-  padding-left: 0.5em; }
-ul.alt {
-  list-style: none;
-  padding-left: 0; }
-  ul.alt li {
-    border-top: solid 1px #ccc;
-    padding: 0.5em 0; }
-    ul.alt li:first-child {
-      border-top: 0;
-      padding-top: 0; }
-ul.icons {
-  cursor: default;
-  list-style: none;
-  padding-left: 0; }
-  ul.icons li {
-    display: inline-block;
-    padding: 0 1em 0 0; }
-    ul.icons li:last-child {
-      padding-right: 0; }
-    ul.icons li .icon:before {
-      font-size: 1.5rem; }
-ul.actions {
-  cursor: default;
-  list-style: none;
-  padding-left: 0; }
-  ul.actions li {
-    display: inline-block;
-    padding: 0 0.625em 0 0;
-    vertical-align: middle; }
-    ul.actions li:last-child {
-      padding-right: 0; }
-  ul.actions.small li {
-    padding: 0 0.3125em 0 0; }
-  ul.actions.vertical li {
-    display: block;
-    padding: 0.625em 0 0 0; }
-    ul.actions.vertical li:first-child {
-      padding-top: 0; }
-    ul.actions.vertical li > * {
-      margin-bottom: 0; }
-  ul.actions.vertical.small li {
-    padding: 0.3125em 0 0 0; }
-    ul.actions.vertical.small li:first-child {
-      padding-top: 0; }
-  ul.actions.fit {
-    display: table;
-    margin-left: -0.625em;
-    padding: 0;
-    table-layout: fixed;
-    width: calc(100% + 0.625em); }
-    ul.actions.fit li {
-      display: table-cell;
-      padding: 0 0 0 0.625em; }
-      ul.actions.fit li > * {
-        margin-bottom: 0; }
-    ul.actions.fit.small {
-      margin-left: -0.3125em;
-      width: calc(100% + 0.3125em); }
-      ul.actions.fit.small li {
-        padding: 0 0 0 0.3125em; }
-
 a {
   -moz-transition: color 0.25s ease, border-bottom-color 0.25s ease;
   -webkit-transition: color 0.25s ease, border-bottom-color 0.25s ease;
   -ms-transition: color 0.25s ease, border-bottom-color 0.25s ease;
   transition: color 0.25s ease, border-bottom-color 0.25s ease;
-  border-bottom: dotted 1px;
   color: inherit;
-  text-decoration: none;
-}
-a:hover {
-  border-bottom-color: transparent;
-  /*FInd color!*/
-  color: silver; 
+  text-decoration: none; }
+a:hover{
+  color: #ffb433; }
+
+label {
+  color: #555;
+  display: block;
+  font-size: 0.9em;
+  font-weight: 400;
+  margin: 0 0 0.625em 0; }
+
+ul {
+  list-style: none;
 }
 
-.select {
-  /*FInd color!*/
+ul {
+  list-style: disc;
+  margin: 0 0 1.25em 0;
+  padding-left: 1em; }
+ul li {
+  padding-left: 0.5em; }
+ul.icons {
+  position: absolute;
+  opacity: 0.75;
+  cursor: default;
+  list-style: none;
+  padding-left: 0; }
+  ul.icons li {
+    display: inline-block;
+    padding: 0 3.05em 0 0; }
+    ul.icons li:last-child {
+      padding-right: 0; }
+    ul.icons li .icon:before {
+      font-size: 2rem; }
+
+.dropbtn {
+    /*background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;*/
+    border: none;
+    /*display:inline;*/
+    display:inline-block;
+}
+/*.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    overflow:auto;
+    width: 100%;
+    /*background-color: #f9f9f9;*/
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    z-index: 1;
+    left: -26px;
+}
+
+.dropdown-content a {
   color: silver;
+  /*padding: 8px 12px;*/
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(241, 241, 241, 0.35);
+  color: white;
+  opacity: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.shade {
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+}
+
+.all {
+  -moz-transition: color 0.25s ease, border-bottom-color 0.25s ease;
+  -webkit-transition: color 0.25s ease, border-bottom-color 0.25s ease;
+  -ms-transition: color 0.25s ease, border-bottom-color 0.25s ease;
+  transition: color 0.25s ease, border-bottom-color 0.25s ease;
+  color: inherit;
+  text-decoration: none; 
+}
+.all:hover {
+  border-bottom-color: transparent;
+  cursor: default;
+  /*text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);*/
+  /*FInd color!*/
+  color: #ffb433; 
+}
+.invis {
+  opacity: 0;
+}
+.selected {
+  /*FInd color!*/
+  color: #ffb433 ;
 }
