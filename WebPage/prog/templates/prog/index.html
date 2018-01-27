@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--{% load static %}
+{% static "/prog" as baseUrl %}-->
+<html lang="en">
+<title>Robin Lunde</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" type="text/css" href="{{ baseUrl }}/assets/css/index.css">
+<style type="text/css">
+  body,h1 {font-family: "Raleway", sans-serif}
+  body, html {height: 100%}
+  .bgimg {
+    background-image: url("{{ baseUrl }}/19.jpg");
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    <!--LINK-->
+  </div>
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top">Robin Lunde</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center">
+      <ul class="icons" style="color: white;">
+              <li><a href="https://www.instagram.com/robinlunde/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+              <li><a href="https://github.com/Robiq" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+              <li><a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="icon fa-linkedin"><span class="label">Email</span></a></li>
+              <li><a href="mailto:robin@wub.no" class="icon fa-envelope-o"><span class="label">Mail Private</span></a></li>
+              <li ><a href="mailto:robin@keio.jp" class="icon fa-envelope"><span class="label">Mail work</span></a></li>
+            </ul>
+    </p>
+    <p class="w3-large w3-center">
+      <br><a href="">About me</a>&emsp;|&emsp;<a href="">CV</a>&emsp;|&emsp;<a href="{% url 'images:index' lang='en' %}">Images</a>&emsp;|&emsp;<a href="" style="color: gray">Blog</a>
+    </p>
+    <p id="aboutme" class="w3-large w3-center">
+    </p>
+  </div>
+</div>
+
+</body>
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script type="text/javascript">
+  let t = "TEST!";
+  if ( $("#aboutme").hasClass("select") ){
+    $("#aboutme").text("");
+    $("#aboutme").fadeTo("slow", 0).slideUp(500);
+  } else{
+    $("#aboutme").text(t);
+    $("#aboutme").fadeTo("slow", 1).slideUp(500);
+  }
+  $("#aboutme").toggleClass("select");
+</script>
+</html>

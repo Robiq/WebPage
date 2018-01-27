@@ -16,10 +16,11 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.http import HttpResponseRedirect
+from prog.views import HomeView
 
 urlpatterns = [
+    url(r'^$', HomeView.as_view(), name='home'),
 	url(r'^images/', include('images.urls')),
 	url(r'^prog/', include('prog.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', lambda r: HttpResponseRedirect('images/'))
 ]

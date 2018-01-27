@@ -1,0 +1,107 @@
+@import url(font-awsome.min.css)
+
+/* Icon */
+.icon {
+  text-decoration: none;
+  border-bottom: none;
+  position: relative; }
+  .icon:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none !important; }
+  .icon > .label {
+    display: none; 
+}
+
+ol, ul {
+  list-style: none;
+}
+
+ul {
+list-style: disc;
+margin: 0 0 1.25em 0;
+padding-left: 1em; }
+ul li {
+  padding-left: 0.5em; }
+ul.alt {
+  list-style: none;
+  padding-left: 0; }
+  ul.alt li {
+    border-top: solid 1px #ccc;
+    padding: 0.5em 0; }
+    ul.alt li:first-child {
+      border-top: 0;
+      padding-top: 0; }
+ul.icons {
+  cursor: default;
+  list-style: none;
+  padding-left: 0; }
+  ul.icons li {
+    display: inline-block;
+    padding: 0 1em 0 0; }
+    ul.icons li:last-child {
+      padding-right: 0; }
+    ul.icons li .icon:before {
+      font-size: 1.5rem; }
+ul.actions {
+  cursor: default;
+  list-style: none;
+  padding-left: 0; }
+  ul.actions li {
+    display: inline-block;
+    padding: 0 0.625em 0 0;
+    vertical-align: middle; }
+    ul.actions li:last-child {
+      padding-right: 0; }
+  ul.actions.small li {
+    padding: 0 0.3125em 0 0; }
+  ul.actions.vertical li {
+    display: block;
+    padding: 0.625em 0 0 0; }
+    ul.actions.vertical li:first-child {
+      padding-top: 0; }
+    ul.actions.vertical li > * {
+      margin-bottom: 0; }
+  ul.actions.vertical.small li {
+    padding: 0.3125em 0 0 0; }
+    ul.actions.vertical.small li:first-child {
+      padding-top: 0; }
+  ul.actions.fit {
+    display: table;
+    margin-left: -0.625em;
+    padding: 0;
+    table-layout: fixed;
+    width: calc(100% + 0.625em); }
+    ul.actions.fit li {
+      display: table-cell;
+      padding: 0 0 0 0.625em; }
+      ul.actions.fit li > * {
+        margin-bottom: 0; }
+    ul.actions.fit.small {
+      margin-left: -0.3125em;
+      width: calc(100% + 0.3125em); }
+      ul.actions.fit.small li {
+        padding: 0 0 0 0.3125em; }
+
+a {
+  -moz-transition: color 0.25s ease, border-bottom-color 0.25s ease;
+  -webkit-transition: color 0.25s ease, border-bottom-color 0.25s ease;
+  -ms-transition: color 0.25s ease, border-bottom-color 0.25s ease;
+  transition: color 0.25s ease, border-bottom-color 0.25s ease;
+  border-bottom: dotted 1px;
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  border-bottom-color: transparent;
+  /*FInd color!*/
+  color: silver; 
+}
+
+.select {
+  /*FInd color!*/
+  color: silver;
+}
