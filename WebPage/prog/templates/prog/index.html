@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+{% static "/prog" as baseUrl %}
+<html lang="en">
+<title>Robin Lunde</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" type="text/css" href="{{ baseUrl }}/assets/css/index.css">
+<!--<link rel="stylesheet" href="{{ baseUrl }}/assets/css/main.css" /> -->
+<style type="text/css">
+  body,h1 {font-family: "Raleway", sans-serif}
+  body, html {height: 100%;text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.75);}
+  h1{
+    opacity: 0.75;
+  }
+  .bgimg {
+    background-image: url("{{ baseUrl }}/19.jpg");
+    display: block;
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+    right: 0;
+    z-index: 1;
+    filter: brightness(0.9) blur(2px);
+  }
+</style>
+  <script src="{% static 'prog/assets/js/jquery.min.js' %}"></script>
+<body>
+<div class="bgimg">
+</div>
+<div class="w3-display-container w3-animate-opacity w3-text-white" style="position: static;">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    <!--LINK-->
+  </div>
+  <div class="w3-display-middle" style="transform: translate(-50%,-68%);">
+    <br><br><br><br><br>
+    <h1 style="color: inherit; margin: 0px 0;" class="w3-jumbo w3-animate-top"> Robin Lunde</h1>
+    <!--<hr class="w3-border-grey" style="margin:auto;width:60%">-->
+    <div class="w3-large w3-center" style="margin: 10px 0;">
+      <ul class="icons" style="color: white;">
+        <li><a href="https://www.instagram.com/robinlunde/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/Robiq" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+        <li><a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="icon fa-linkedin"><span class="label">Email</span></a></li>
+        <li><a href="mailto:robin@wub.no" class="icon fa-envelope-o"><span class="label">Mail Private</span></a></li>
+        <li ><a href="mailto:robin@keio.jp" class="icon fa-envelope" ><span class="label">Mail work</span></a></li>
+      </ul>
+    </div>
+    <br>
+    <div class="w3-large w3-center" style="margin: 18px 0">
+        <br>
+        <a id="abBtn" class="all" onclick="press();return null;">About me</a>&emsp;|&emsp;
+        <div class="dropdown dropbtn all">CV
+        <div class="dropdown-content">
+          <a href="{% static 'prog/assets/cv_jp.pdf' %}">日本語</a>
+          <a href="{% static 'prog/assets/cv_en.pdf' %}">English</a>
+        </div>
+      </div>&emsp;|&emsp;
+      <a class="all" href="{% url 'images:index' %}">Images</a>&emsp;|&emsp;
+      <a class="all" style="color: lightsteelblue;">Blog</a>
+    </div>
+    <br><br>
+    <p id="aboutme" class="w3-large w3-center invis">TEST!
+    </p>
+  </div>
+</body>
+  <script type="text/javascript">
+    function press(){
+      $("#aboutme").removeClass("invis");
+      if ( $("#abBtn").hasClass("selected") ){
+        $("#aboutme").fadeTo("slow", 0);
+      } else{
+        $("#aboutme").fadeTo("slow", 1);
+      }
+      $("#abBtn").toggleClass("selected");
+    }
+  </script>
+</html>
