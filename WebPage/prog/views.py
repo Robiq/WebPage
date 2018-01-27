@@ -12,5 +12,5 @@ class HomeView(View):
 	def get(self, request, *args, **kwargs):
 		return render(request, "prog/index.html", {})
 
-#def index(request):
-#    return HttpResponse("Hello, world. You're at the prog index.")
+def index(request):
+    return HttpResponse("Hello, world. You're at the prog index.")
