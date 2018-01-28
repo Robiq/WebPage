@@ -15,15 +15,29 @@
   h1{
     opacity: 0.75;
   }
+  .center{
+    position: absolute;
+    height: 100px;
+    width: 452px;    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);    
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
   .bgimg {
     background-image: url("{{ baseUrl }}/19.jpg");
-    display: block;
-    min-height: 100%;
     background-position: center;
     background-size: cover;
     right: 0;
     z-index: 1;
+    display: block;
+    min-height: 100%;
     filter: brightness(0.9) blur(2px);
+  }
+  .w3-large{
+    font-size: 18px;
   }
 </style>
   <script src="{% static 'prog/assets/js/jquery.min.js' %}"></script>
@@ -34,12 +48,11 @@
   <div class="w3-display-topleft w3-padding-large w3-xlarge">
     <!--LINK-->
   </div>
-  <div class="w3-display-middle" style="transform: translate(-50%,-68%);">
-    <br><br><br><br><br>
-    <h1 style="color: inherit; margin: 0px 0;" class="w3-jumbo w3-animate-top"> Robin Lunde</h1>
-    <!--<hr class="w3-border-grey" style="margin:auto;width:60%">-->
-    <div class="w3-large w3-center" style="margin: 10px 0;">
-      <ul class="icons" style="color: white;">
+  <div class="w3-display-middle">
+    <h1 style="text-align: center; color: inherit; margin: 0px 0;" class="w3-jumbo w3-animate-top"> Robin Lunde</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:60%">
+    <div class="w3-large w3-center center" style="margin: 10px 0;">
+      <ul class="icons" style="color: white; padding-left: 40px;">
         <li><a href="https://www.instagram.com/robinlunde/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
         <li><a href="https://github.com/Robiq" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
         <li><a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="icon fa-linkedin"><span class="label">Email</span></a></li>
@@ -48,21 +61,48 @@
       </ul>
     </div>
     <br>
-    <div class="w3-large w3-center" style="margin: 18px 0">
+    <div class="w3-large w3-center center" style="margin: 18px 0">
         <br>
         <a id="abBtn" class="all" onclick="press();return null;">About me</a>&emsp;|&emsp;
         <div class="dropdown dropbtn all">CV
         <div class="dropdown-content">
-          <a href="{% static 'prog/cv_jp.pdf' %}">日本語</a>
-          <a href="{% static 'prog/cv_en.pdf' %}">English</a>
+          <a href="{% static 'prog/cv_jp.pdf' %}" target="_blank">日本語</a>
+          <a href="{% static 'prog/cv_en.pdf' %}" target="_blank">English</a>
         </div>
       </div>&emsp;|&emsp;
       <a class="all" href="{% url 'images:index' %}">Images</a>&emsp;|&emsp;
       <a class="all" style="color: lightsteelblue;">Blog</a>
     </div>
     <br><br>
-    <p id="aboutme" class="w3-large w3-center invis">TEST!
+    <p id="aboutme" class="invis center">
+      Hi!<br>My name is Robin. I am a software developer and security professional. I am currently a master's student at Keio University, but will graduate in September, 2018. Please contact me if you have any questions at all.<br>Robin ^-^
     </p>
+      <div id="aboutme" class="w3-large w3-center invis center">
+        About me:<br>
+        <li style="list-style: none;">Age: 26</li>
+        <li style="list-style: none;">Nationality: NORWAY</li>
+        <li style="list-style: none;">Phone: (+81) 080-8900-7795</li>
+        <li style="list-style: none;">Adr: Yamato, Kanagawa, Japan</li>
+      </div>
+      <div id="aboutme" class="w3-large w3-center invis center">
+       I speak:<br>
+        <ul style="padding-left: 0px; margin-bottom: 0px; columns: 2;">
+          <li style="list-style: none;">Norwegian</li>
+          <li style="list-style: none;">English</li>
+          <li style="list-style: none;">Japanese</li>
+          <li style="list-style: none;">Spanish</li>
+       </ul>
+     </div>
+      <div id="aboutme" class="w3-large w3-center invis center">
+       My hobbies are:<br>
+       <ul class="center icons" style="color: white; opacity: 1; font-size: 20px;">
+        <li class="icon fa-camera"></li>
+        <li class="icon fa-cutlery"></li>
+        <li class="icon fa-code"></li>
+        <li class="icon fa-heartbeat"></li>
+        <li class="icon fa-music"></li>
+       </ul>
+    </div>
   </div>
 </body>
   <script type="text/javascript">

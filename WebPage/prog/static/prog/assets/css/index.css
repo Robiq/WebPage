@@ -39,7 +39,8 @@ ul {
 ul {
   list-style: disc;
   margin: 0 0 1.25em 0;
-  padding-left: 1em; }
+  padding-left: 0;
+   }
 ul li {
   padding-left: 0.5em; }
 ul.icons {
@@ -55,6 +56,18 @@ ul.icons {
       padding-right: 0; }
     ul.icons li .icon:before {
       font-size: 2rem; }
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 .dropbtn {
     /*background-color: #4CAF50;
