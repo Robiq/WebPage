@@ -1,119 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 {% load static %}
 {% static "/prog" as baseUrl %}
 <html lang="en">
-<title>Robin Lunde</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" type="text/css" href="{{ baseUrl }}/assets/css/index.css">
-<!--<link rel="stylesheet" href="{{ baseUrl }}/assets/css/main.css" /> -->
-<style type="text/css">
-  body,h1 {font-family: "Raleway", sans-serif}
-  body, html {height: 100%;text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.75);}
-  h1{
-    opacity: 0.75;
-  }
-  .center{
-    position: absolute;
-    height: 100px;
-    width: 452px;    
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);    
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-  }
-  .bgimg {
-    background-image: url("{{ baseUrl }}/19.jpg");
-    background-position: center;
-    background-size: cover;
-    right: 0;
-    z-index: 1;
-    display: block;
-    min-height: 100%;
-    filter: brightness(0.9) blur(2px);
-  }
-  .w3-large{
-    font-size: 18px;
-  }
-</style>
-  <script src="{% static 'prog/assets/js/jquery.min.js' %}"></script>
-<body>
-<div class="bgimg">
-</div>
-<div class="w3-display-container w3-animate-opacity w3-text-white" style="position: static;">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    <!--LINK-->
-  </div>
-  <div class="w3-display-middle">
-    <h1 style="text-align: center; color: inherit; margin: 0px 0;" class="w3-jumbo w3-animate-top"> Robin Lunde</h1>
-    <hr class="w3-border-grey" style="margin:auto;width:60%">
-    <div class="w3-large w3-center center" style="margin: 10px 0;">
-      <ul class="icons" style="color: white; padding-left: 40px;">
-        <li><a href="https://www.instagram.com/robinlunde/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-        <li><a href="https://github.com/Robiq" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="icon fa-linkedin"><span class="label">Email</span></a></li>
-        <li><a href="mailto:robin@wub.no" class="icon fa-envelope-o"><span class="label">Mail Private</span></a></li>
-        <li ><a href="mailto:robin@keio.jp" class="icon fa-envelope" ><span class="label">Mail work</span></a></li>
-      </ul>
-    </div>
-    <br>
-    <div class="w3-large w3-center center" style="margin: 18px 0">
-        <br>
-        <a id="abBtn" class="all" onclick="press();return null;">About me</a>&emsp;|&emsp;
-        <div class="dropdown dropbtn all">CV
-        <div class="dropdown-content">
-          <a href="{% static 'prog/cv_jp.pdf' %}" target="_blank">日本語</a>
-          <a href="{% static 'prog/cv_en.pdf' %}" target="_blank">English</a>
-        </div>
-      </div>&emsp;|&emsp;
-      <a class="all" href="{% url 'images:index' %}">Images</a>&emsp;|&emsp;
-      <a class="all" style="color: lightsteelblue;">Blog</a>
-    </div>
-    <br><br>
-    <p id="aboutme" class="invis center">
-      Hi!<br>My name is Robin. I am a software developer and security professional. I am currently a master's student at Keio University, but will graduate in September, 2018. Please contact me if you have any questions at all.<br>Robin ^-^
-    </p>
-      <div id="aboutme" class="w3-large w3-center invis center">
-        About me:<br>
-        <li style="list-style: none;">Age: 26</li>
-        <li style="list-style: none;">Nationality: NORWAY</li>
-        <li style="list-style: none;">Phone: (+81) 080-8900-7795</li>
-        <li style="list-style: none;">Adr: Yamato, Kanagawa, Japan</li>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- WTF is the difference? -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <!-- Raleway font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <!-- My own CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ baseUrl }}/assets/css/index.css">
+    <title>Robin Lunde</title>
+  </head>
+  <body>
+    
+    <!-- BACKGROUND! -->
+    <div class="bg"></div>
+
+    <!-- Content -->
+    <div class='container-fluid'>
+      <!-- Top part -->
+      <div class="jumbotron text-center container-fluid" style="background-color: transparent;">
+        <!-- Header  -->
+        <h1>Robin Lunde</h1>
+        
+        <!-- LINE -->
+        <hr class="w3-border-grey" style="margin:auto;width:40%">
+        
+        <!-- 2nd section -->
+        <p>
+          <div class="icon list-inline subheader">
+            <a href="https://www.instagram.com/robinlunde/" target="_blank" class=" list-inline-item space">
+              <i class="fab fa-instagram"></i>
+            </a>
+            
+            <a href="https://github.com/Robiq" target="_blank" class="list-inline-item space">
+              <!-- <i class="fab fa-github-square"></i> -->
+              <i class="fab fa-github"></i>
+            </a>
+            
+            <a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="list-inline-item space">
+              <!--<i class="fab fa-linkedin"></i>-->
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            
+            <a href="mailto:robin@wub.no" data-toggle="tooltip" title="Private" class="list-inline-item space">
+              <i class="fas fa-envelope"></i> 
+            </a>
+            
+            <a href="mailto:robin@keio.jp" data-toggle="tooltip" title="Professional" class="list-inline-item space">
+              <i class="far fa-envelope"></i>
+            </a>
+          </div>
+        </p>
+
+        <!-- 3rd section -->
+          <!-- MENU format! -->
+        <p>
+          <!-- MENU format! 567 - 767 -->
+          <div class="container-fluid">
+            <div class="row list list-inline subheader">
+              
+              <div class ="col"></div>
+              
+              <a id="aboutme" href="#abme" data-toggle="collapse" class="list-inline-item list-inline-item-action col-sm-auto">About me</a>
+
+              <div class="dropdown col-sm-auto">
+                <a class="list-inline-item list-inline-item-action dropbtn">CV</a>
+                <div class="dropdown-content">
+                  <a href="{% static 'prog/cv_jp.pdf' %}" target="_blank">日本語</a>
+                  <a href="{% static 'prog/cv_en.pdf' %}" target="_blank">English</a>
+                </div>
+              </div>
+            
+              <a href="{% url 'images:index' %}" target="_blank" class="list-inline-item list-inline-item-action col-sm-auto ">Images</a>
+            
+              <a class="list-inline-item disabled col-sm-auto" style="color: lightgrey;" data-toggle="tooltip" title="Coming soon!">Blog</a>
+              
+              <div class ="col"></div>
+          
+            </div>
+          </div>
+        </p>
+      <!-- Jumbotron ends -->
       </div>
-      <div id="aboutme" class="w3-large w3-center invis center">
-       I speak:<br>
-        <ul style="padding-left: 0px; margin-bottom: 0px; columns: 2;">
-          <li style="list-style: none;">Norwegian</li>
-          <li style="list-style: none;">English</li>
-          <li style="list-style: none;">Japanese</li>
-          <li style="list-style: none;">Spanish</li>
-       </ul>
-     </div>
-      <div id="aboutme" class="w3-large w3-center invis center">
-       My hobbies are:<br>
-       <ul class="center icons" style="color: white; opacity: 1; font-size: 20px;">
-        <li class="icon fa-camera"></li>
-        <li class="icon fa-cutlery"></li>
-        <li class="icon fa-code"></li>
-        <li class="icon fa-heartbeat"></li>
-        <li class="icon fa-music"></li>
-       </ul>
+      
+      <!-- Collapseable text -->
+      <div class="container-fluid collapse" id="abme">
+        <div class="row equal align-items-bottom" style="align-self: flex-end;">
+         
+          <!-- Left column -->
+          <div class="col-xs-auto col-sm-6 align-self-bottom text-center">
+            <table>
+              <tr>
+                <th>Name:</th>
+                <td>Robin Lunde</td>
+              </tr>
+              <tr>
+                <th>Age:</th>
+                <td>26 (1992)</td>
+              </tr>
+              <tr>
+                <th>Nationality:</th>
+                <td>Norway</td>
+              </tr>
+              <tr>
+                <th>Country:</th>
+                <td>Japan</td>
+              </tr>
+
+              <tr>
+                <th>Phone nr:</th>
+                <td>* 080 8900 7795</td>
+              </tr>
+            </table>
+            <!-- Bottom text -->
+            <div>
+              * For international calls add +81
+            </div>
+          </div>
+          
+          <!-- Right column -->
+          <div class="col-xs-auto col-sm-6 align-self-bottom text-center">
+            <table>
+              <tr>
+                <th>Profession:</th>
+                <td>Security Engineer</td>
+              </tr>
+              <tr>
+                <th>Education:</th>
+                <td>Master's Degree</td>
+              </tr>
+              <tr>
+                <th>University:</th>
+                <td>Keio University</td>
+              </tr>
+              <tr>
+                <th>Graduation:</th>
+                <td>September, 2018</td>
+              </tr>
+            </table>
+            <b>My hobbies:</b><br>
+            <ul class="list-inline subheader">
+              <a class="interest"> <i class="fas fa-camera"></i></a>
+              <a class="interest"> <i class="fas fa-utensils"></i></a>
+              <a class="interest"> <i class="fas fa-code"></i></a>
+              <a class="interest"> <i class="fas fa-heartbeat"></i></a>
+              <a class="interest"> <i class="fas fa-music"></i> </a>
+            </ul>
+          <!-- Closing right column -->
+          </div>
+        <!-- Closing rows -->
+        </div>
+        <!-- Closing collapsable -->
+      </div>
+    <!-- Content -->
     </div>
-  </div>
-</body>
-  <script type="text/javascript">
-    function press(){
-      $("#aboutme").removeClass("invis");
-      if ( $("#abBtn").hasClass("selected") ){
-        $("#aboutme").fadeTo("slow", 0);
-      } else{
-        $("#aboutme").fadeTo("slow", 1);
-      }
-      $("#abBtn").toggleClass("selected");
-    }
-  </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();   
+      });
+
+      $('.collapse').on('shown.bs.collapse', function(){
+        $('#aboutme').toggleClass("selected");
+        }).on('hidden.bs.collapse', function(){
+          $('#aboutme').toggleClass("selected");
+      });
+    </script>
+  </body>
 </html>

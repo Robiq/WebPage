@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %}
+{% static "/prog" as baseUrl %}
+<html lang="en">
+<title>Robin Lunde</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" type="text/css" href="{{ baseUrl }}/assets/css/index.css">
+<!--<link rel="stylesheet" href="{{ baseUrl }}/assets/css/main.css" /> -->
+<style type="text/css">
+  body,h1 {font-family: "Raleway", sans-serif}
+  body, html {height: 100%;text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.75);}
+  h1{
+    opacity: 0.75;
+  }
+  .center{
+    position: absolute;
+    height: 100px;
+    width: 452px;    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);    
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+  .bgimg {
+    background-image: url("{{ baseUrl }}/19.jpg");
+    background-position: center;
+    background-size: cover;
+    right: 0;
+    z-index: 1;
+    display: block;
+    min-height: 100%;
+    filter: brightness(0.9) blur(2px);
+  }
+
+</style>
+  <script src="{% static 'prog/assets/js/jquery.min.js' %}"></script>
+<body>
+<div class="bgimg">
+</div>
+<div class="w3-display-container w3-animate-opacity w3-text-white" style="position: static;">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    <!--LINK-->
+  </div>
+  <div class="w3-display-middle">
+    <h1 style="ttext-align: center; color: inherit; margin: -250px 0px 0px 0px;" class="w3-jumbo w3-animate-top"> Robin Lunde</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:60%">
+
+    <div class="w3-large w3-center center" style="margin: -100px 0;">
+      <ul class="icons" style="color: white; padding-left: 40px;">
+        <li><a href="https://www.instagram.com/robinlunde/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/Robiq" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+        <li><a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="icon fa-linkedin"><span class="label">Email</span></a></li>
+        <li><a href="mailto:robin@wub.no" class="icon fa-envelope-o"><span class="label">Mail Private</span></a></li>
+        <li ><a href="mailto:robin@keio.jp" class="icon fa-envelope" ><span class="label">Mail work</span></a></li>
+      </ul>
+    </div>
+    <br>
+    <div class="w3-large w3-center center" style="margin: -50px 0px 0px 0px;>
+        <br>
+        <a id="abBtn" class="all" onclick="press();return null;">About me</a>&emsp;|&emsp;
+        <div class="dropdown dropbtn all">CV
+        <div class="dropdown-content">
+          <a href="{% static 'prog/cv_jp.pdf' %}" target="_blank">日本語</a>
+          <a href="{% static 'prog/cv_en.pdf' %}" target="_blank">English</a>
+        </div>
+      </div>&emsp;|&emsp;
+      <a class="all" href="{% url 'images:index' %}">Images</a>&emsp;|&emsp;
+      <a class="all" style="color: lightsteelblue;">Blog</a>
+    </div>
+    <br><br>
+    <p id="aboutme" class="invis center" style="margin: 67px 0px 0px 0px;font-size: 18px!important;text-align: center;" hidden>
+      Hi,  Robin is my name! I am a software developer and security professional. I am master's student at Keio University, but will graduate in September, 2018. Please contact me if you have any questions.<br>Robin ^-^
+    </p>
+      <div id="aboutme1" class="w3-large w3-center invis center" style="margin: 74% 0px 0px 79%;text-align: right;font-size: 12px;">
+        About me:<br>
+        <li style="list-style: none;">Age: 26</li>
+        <li style="list-style: none;">Nationality: NORWAY</li>
+        <li style="list-style: none;">Phone: (+81) 080-8900-7795</li>
+        <li style="list-style: none;">Adr: Yamato, Kanagawa, Japan</li>
+      </div>
+      <div id="aboutme2" class="w3-large w3-center invis center" style="margin: 83% 0px 0px -121%;width: 148px;text-align: left;font-size: 12px;">
+       I can speak:<br>
+        <ul style="padding-left: 0px; margin-bottom: 0px; columns: 2;">
+          <li style="list-style: none;">Norwegian</li>
+          <li style="list-style: none;">English</li>
+          <li style="list-style: none;">Japanese</li>
+          <li style="list-style: none;">Spanish</li>
+       </ul>
+     </div>
+      <div id="aboutme3" class="w3-large w3-center invis center" style="margin: 300px 0px 0px 0px;font-size: 18px;" >
+       My hobbies are:<br>
+       <ul class="center icons" style="margin: 300px 0px 0px 0px;font-size: 18px;">
+        <li class="icon fa-camera"></li>
+        <li class="icon fa-cutlery"></li>
+        <li class="icon fa-code"></li>
+        <li class="icon fa-heartbeat"></li>
+        <li class="icon fa-music"></li>
+       </ul>
+    </div>
+  </div>
+</body>
+  <script type="text/javascript">
+    function press(){
+      $("#aboutme").toggleClass("invis");
+      $("#aboutme1").toggleClass("invis");
+      $("#aboutme2").toggleClass("invis");
+      $("#aboutme3").toggleClass("invis");
+
+      if ( $("#abBtn").hasClass("selected") ){
+        $("#aboutme").fadeTo("slow", 0);
+        $("#aboutme1").fadeTo("slow", 0);
+        $("#aboutme2").fadeTo("slow", 0);
+        $("#aboutme3").fadeTo("slow", 0);
+      } else{
+        $("#aboutme").fadeTo("slow", 1);
+        $("#aboutme1").fadeTo("slow", 1);
+        $("#aboutme2").fadeTo("slow", 1);
+        $("#aboutme3").fadeTo("slow", 1);
+      }
+      $("#abBtn").toggleClass("selected");
+    }
+  </script>
+</html>
