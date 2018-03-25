@@ -24,12 +24,12 @@ SECRET_KEY = os.environ.get('secret_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #Test
-DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1','203.178.143.47', '.robinlunde.tk','.robinlunde.cf']
+#DEBUG = True
+#ALLOWED_HOSTS = ['127.0.0.1','203.178.143.47', '.robinlunde.tk','.robinlunde.cf']
 
 #Prod
-#DEBUG = False
-#ALLOWED_HOSTS = ['203.178.143.47', '.robinlunde.tk','.robinlunde.cf']
+DEBUG = False
+ALLOWED_HOSTS = ['203.178.143.47', '.robinlunde.tk','.robinlunde.cf']
 
 
 # Application definition
