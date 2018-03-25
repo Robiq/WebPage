@@ -1,0 +1,66 @@
+{% extends "zinnia:zinnia/sitemap.html" %}
+{% load i18n zinnia mptt_tags staticfiles %}
+
+{% block content %}
+<h1>{% trans "Sitemap" %}</h1>
+
+<div class="SiteMap">
+  <h2><li>
+    
+    <a href="{% url 'home' %}">Top Page</a>
+  </h2>
+    <h2>
+      <li>
+        <a href="{% url 'images:index' %}">Pictures</a>
+      </li>
+    </h2>
+    <h2>
+      <li>
+        <a href="{% url 'zinnia:entry_archive_index' %}">Blog</a>
+      </li>
+    </h2>
+    <h2>
+      <li>
+          {% trans "CV:" %}
+      </li>
+    </h2>
+    <h3>
+      <ul><li>
+        <a href="{% static 'prog/cv_en.pdf' %}" target="_blank">English</a>
+      </li></ul>
+      <ul><li>
+        <a href="{% static 'prog/cv_jp.pdf' %}" target="_blank">日本語</a>
+      </li></ul>
+    </h3>
+    </li>
+  </li>
+</div>
+<!--
+<div class="entriesbycategories">
+  <h2>{% trans "Entries per categories" %}</h2>
+  {% for category in categories %}
+  <h3>{{ category }}</h3>
+  <ul class="list-group">
+    {% for entry in category.entries_published.all %}
+    <li class="list-group-item">
+      <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
+      {% with comment_count=entry.comments.count %}
+      <span class="badge">
+        {{ comment_count }} {% trans "comment" %}{{ comment_count|pluralize }}
+      </span>
+      {% endwith %}
+    </li>
+    {% empty %}
+    <li class="list-group-item">
+      {% trans "No entries yet." %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</div>
+-->
+<div class="montharchives">
+  <h2>{% trans "Monthly archives" %}</h2>
+  {% get_archives_entries %}
+</div>
+{% endblock content %}
