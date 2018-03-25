@@ -58,13 +58,13 @@
           <ul class="nav navbar-nav navbar-left">
             <li> <a href="{% url 'home' %}">Homepage</a> </li>
             <li> <a href="{% url 'images:index' %}">Pictures</a> </li>
-            <!--
             {% url 'zinnia:category_list' as category_list_url %}
             <li {% if category_list_url in request.path %}class="active"{% endif %}>
               <a href="{{ category_list_url }}" title="{% trans "Category list" %}">
                 {% trans "Categories" %}
               </a>
             </li>
+            <!--
             {% url 'zinnia:author_list' as author_list_url %}
             <li {% if author_list_url in request.path %}class="active"{% endif %}>
               <a href="{{ author_list_url }}" title="{% trans "Author list" %}">
