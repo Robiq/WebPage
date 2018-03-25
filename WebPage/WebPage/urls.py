@@ -23,4 +23,7 @@ urlpatterns = [
 	url(r'^images/', include('images.urls')),
 	url(r'^prog/', include('prog.urls')),
     url(r'^admin/', admin.site.urls),
+    #zinnia
+    url(r'^blog/', include('zinnia.urls')),
+    url(r'^comments/', include('django_comments.urls')),
 ]
