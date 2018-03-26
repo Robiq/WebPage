@@ -38,7 +38,7 @@
 {% block entry-content %}
   {% include object.content_template with object_content=object.html_content %}
 {% endblock entry-content %}
-
+<!--
 {% block entry-widgets %}
 <aside role="complementary" class="entry-widgets">
   {% block entry-next-entry %}
@@ -69,7 +69,7 @@
   {% endif %}
   {% endwith %}
   {% endblock entry-previous-entry %}
-  <!--
+
   {% block entry-related-entries %}
   {% with entry_related=object.related_published %}
   {% if entry_related %}
@@ -92,11 +92,9 @@
     {% get_similar_entries %}
   </div>
   {% endblock entry-similar-entries %}
-  -->
 </aside>
 {% endblock entry-widgets %}
 
-<!--
 {% block entry-pingbacks %}
 <section id="pingbacks">
   <h3>{% trans "Pingbacks" %}</h3>

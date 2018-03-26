@@ -1,10 +1,8 @@
 {% extends "zinnia:zinnia/entry_detail_base.html" %}
 {% load i18n zinnia %}
-
-
+<!--
 {% block entry-widgets %}
 <aside class="entry-widgets" role="complementary">
-<!--
   {% block entry-related-entries %}
   {% with entry_related=object.related_published %}
   {% if entry_related %}
@@ -31,7 +29,6 @@
     {% get_similar_entries %}
   </div>
   {% endblock entry-similar-entries %}
-  -->
   {% block entry-previous-next-entries %}
   <div class="entry-prev-next">
     <ul class="pager">
@@ -58,6 +55,8 @@
   {% endblock entry-previous-next-entries %}
 </aside>
 {% endblock entry-widgets %}
+-->
+
 <!--
 {% block entry-pingbacks %}
 {% if object.pingback_count %}
@@ -103,7 +102,7 @@
 {% endif %}
 {% endblock pingbacks-status %}
 {% endblock entry-pingbacks %}
-<-->
+-->
 <!--
 {% block entry-trackbacks %}
 {% if object.trackback_count %}
