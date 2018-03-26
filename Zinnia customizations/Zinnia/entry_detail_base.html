@@ -38,8 +38,8 @@
 {% block entry-content %}
   {% include object.content_template with object_content=object.html_content %}
 {% endblock entry-content %}
-<!--
 {% block entry-widgets %}
+<!--
 <aside role="complementary" class="entry-widgets">
   {% block entry-next-entry %}
   {% with next_entry=object.next_entry %}
@@ -93,9 +93,10 @@
   </div>
   {% endblock entry-similar-entries %}
 </aside>
+-->
 {% endblock entry-widgets %}
-
 {% block entry-pingbacks %}
+<!--
 <section id="pingbacks">
   <h3>{% trans "Pingbacks" %}</h3>
   {% if object.pingback_count %}
@@ -138,9 +139,11 @@
   {% endif %}
   {% endblock pingbacks-status %}
 </section>
+-->
 {% endblock entry-pingbacks %}
 
 {% block entry-trackbacks %}
+<!--
 {% if object.trackback_count or object.trackbacks_are_open %}
 <section id="trackbacks">
   <h3>{% trans "Trackbacks" %}</h3>
@@ -186,8 +189,8 @@
   {% endblock trackbacks-status %}
 </section>
 {% endif %}
-{% endblock entry-trackbacks %}
 -->
+{% endblock entry-trackbacks %}
 
 {% block entry-comments %}
 <section id="comments">
