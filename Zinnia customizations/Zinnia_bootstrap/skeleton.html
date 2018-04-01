@@ -13,6 +13,7 @@
     <link rel="pingback" href="/xmlrpc/" />
     <link rel="home" href="{% url 'zinnia:entry_archive_index' %}" />
     <link rel="stylesheet" href="{% static "zinnia_bootstrap/bootstrap/css/bootstrap.min.css" %}" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <style type="text/css">
       body {
         padding-top: 70px;
@@ -107,7 +108,7 @@
         </div>
       </div>
     </nav>
-    {% block slider %}{% endblock %}
+    <!--{% block slider %}{% endblock %}-->
     <div class="container">
       <div class="row">
         <div id="content" class="hfeed col-xs-12 col-sm-8 col-md-8 col-lg-8">
@@ -140,7 +141,7 @@
         </div>
       </div>
     </div>
-    <footer class="container">
+    <footer class="container text-center">
       <p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}</p>
     </footer>
     <script type="text/javascript" src="{% static "zinnia_bootstrap/assets/js/jquery.js" %}"></script>

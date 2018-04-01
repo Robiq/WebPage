@@ -1,6 +1,10 @@
 {% extends "zinnia:zinnia/base.html" %}
-{% load zinnia i18n %}
+{% load zinnia i18n staticfiles %}
 
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="{% static "zinnia_bootstrap/bootstrap/css/bootstrap.min.css" %}" />
+<script type="text/javascript" src="{% static "zinnia_bootstrap/assets/js/jquery.js" %}"></script>
+<script type="text/javascript" src="{% static "zinnia_bootstrap/bootstrap/js/bootstrap.min.js" %}"></script>
 {% block sidebar %}
 <aside id="widget-welcome" class="widget panel panel-default">
   <div class="panel-heading">
@@ -16,9 +20,34 @@
     <p>
       {% trans "Thank you for stumbling across my blog. I hope you find something interesting!<br>Please enjoy!" %}
     </p>
+     <div class="icon list-inline subheader text-center">
+      <p>
+        <a href="https://www.instagram.com/robinlunde/" target="_blank" class=" list-inline-item space">
+          <i class="fab fa-instagram"></i>
+        </a>
+        &emsp;
+        <a href="https://github.com/Robiq" target="_blank" class="list-inline-item space">
+          <!-- <i class="fab fa-github-square"></i> -->
+          <i class="fab fa-github"></i>
+        </a>
+        &emsp;
+        <a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="list-inline-item space">
+          <!--<i class="fab fa-linkedin"></i>-->
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        &emsp;     
+        <a href="mailto:robin@wub.no" data-toggle="tooltip" title="Private" class="list-inline-item space">
+          <i class="fas fa-envelope"></i> 
+        </a>
+        &emsp;
+        <a href="mailto:robin@keio.jp" data-toggle="tooltip" title="Professional" class="list-inline-item space">
+          <i class="far fa-envelope"></i>
+        </a>
+      </p>
+    </div>
   </div>
 </aside>
-<aside id="widget-featured" class="widget panel panel-default">
+<aside id="widget-authors" class="widget panel panel-default">
   <div class="panel-heading">
     {% trans "Featured entries" %}
   </div>

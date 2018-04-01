@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('secret_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 #Test
 #DEBUG = True
-#ALLOWED_HOSTS = ['127.0.0.1','203.178.143.47', '.robinlunde.tk','.robinlunde.cf']
+#ALLOWED_HOSTS = ['127.0.0.1', '127.0.0.1:8000','203.178.143.47', '.robinlunde.tk','.robinlunde.cf']
 
 #Prod
 DEBUG = False
@@ -136,10 +136,18 @@ USE_L10N = True
 USE_TZ = True
 
 # Has to be set to use zinnia
-SITE_ID = 1
+#SITE_ID = 1
+SITE_ID=2
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+#
+#E-mail settings
+ADMINS = (
+    ('Robin Lunde', 'robinl@sfc.wide.ad.jp'),
+)
+MANAGERS = ADMINS
