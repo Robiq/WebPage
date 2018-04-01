@@ -1,5 +1,6 @@
     <!-- SHOWS UP ON BOTH -->
-{% load comments i18n zinnia %}
+{% load comments i18n zinnia static %}
+{% static "/prog" as base %}
 <article id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %}">
   {% block entry-header %}
   <header class="entry-header page-header">
@@ -66,7 +67,7 @@
         {% if continue_reading %}
         <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
           {% endif %}
-          <img src="{{ object.image.url }}" alt="{{ object.title }}" class="img-thumbnail img-responsive" />
+          <img src="{{ base }}/{{ object.image }}" alt="{{ object.image_caption|default:object.title }}" class="img-thumbnail img-responsive" />
           {% if continue_reading %}
         </a>
         {% endif %}
