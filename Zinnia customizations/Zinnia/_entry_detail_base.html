@@ -87,6 +87,9 @@
     {% endblock entry-lead %}
 
     {% block entry-content %}
+    <div class="entry-summary" itemprop="headline">
+      {{ object.html_lead|safe }}
+    </div>
     <div class="entry-content" itemprop="articleBody">
       {{ object_content|safe }}
     </div>
