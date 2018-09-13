@@ -25,11 +25,11 @@ SECRET_KEY = os.environ.get('secret_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 #Test
 #DEBUG = True
-#ALLOWED_HOSTS = ['127.0.0.1','203.178.143.47', '.robinlunde.tk','.robinlunde.cf']
+#ALLOWED_HOSTS = ['127.0.0.1', '127.0.0.1:8000','203.178.143.47', '.robinlunde.tk','.robinlunde.cf']
 
 #Prod
 DEBUG = False
-ALLOWED_HOSTS = ['203.178.143.47', '.robinlunde.tk','.robinlunde.cf']
+ALLOWED_HOSTS = ['95.216.138.178', '.robinlunde.com', '.robinlunde.tk','.robinlunde.cf', 'localhost']
 
 
 # Application definition
@@ -41,6 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    #zinnia
+    #'django_comments',
+    #'mptt',
+    #'tagging',
+    #'zinnia_bootstrap4',
+    #'zinnia',
+    #own
     'prog.apps.ProgConfig',
     'images.apps.ImagesConfig'
 ]
@@ -60,14 +68,22 @@ ROOT_URLCONF = 'WebPage.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        #'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                #zinnia
+                #'django.template.context_processors.i18n',
+                #'zinnia.context_processors.version',  # Optional
+            ],
+            'loaders': [
+                'app_namespace.Loader',
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader',
             ],
         },
     },
@@ -119,9 +135,21 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Has to be set to use zinnia
+SITE_ID = 1
+#SITE_ID=2
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join('/var/www/', 'static/')
+
+
+#
+#E-mail settings
+ADMINS = (
+    ('Robin Lunde', 'robin@wub.no'),
+)
+MANAGERS = ADMINS

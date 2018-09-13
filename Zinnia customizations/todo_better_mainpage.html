@@ -1,0 +1,62 @@
+    <div class="row" style="height:375px">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="text-align:center">
+        {% block entry-image %}
+        {% if object.image %}
+        <div class="entry-image">
+          <p>
+            {% if continue_reading %}
+            <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
+              {% endif %}
+              <img src="{{ object.image.url }}" alt="{{ object.title }}" class="img-thumbnail img-responsive" />
+              {% if continue_reading %}
+            </a>
+            {% endif %}
+          </p>
+        </div>
+        {% endif %}
+        {% endblock entry-image %}
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="entry-content lead">
+        {{ object_content|safe }}
+        </div>
+        {% endblock entry-content %}
+        {% block continue-reading %}
+        {% if continue_reading and object_content.has_more %}
+        <p class="continue-reading" style="text-align: right;">
+          <a href="{{ object.get_absolute_url }}"
+             title="{% blocktrans with object=object.title percent=object_content.remaining_percent|floatformat:0 %}{{ percent }}% of {{ object }} still remains to read.{% endblocktrans %}"
+             rel="bookmark" class="btn btn-primary">
+            {% trans "Continue reading" %}
+          </a>
+        </p>
+        {% endif %}
+        {% endblock continue-reading %}
+      </div>
+  
+  <!-- MODEL!
+<div class="row" style="height:375px">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="text-align:center">
+    <a href="/blog/2018/03/15/make-bubble-plot-excel/" title="Make a Bubble Plot in Excel" rel="bookmark">  
+      <figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject">
+        <div style="max-height:100%; text-align:center; margin: 0 auto">
+          <img class="styleblogimage" src="https://boxplotanalytics.s3.amazonaws.com/media/public/uploads/zinnia/2018/03/15/final-plot-3-medium_medium.png" alt="Make a Bubble Plot in Excel" itemprop="contentUrl">
+        </div>
+      </figure>
+    </a>    
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <div class="entry-content" itemprop="articleBody">
+      <p>Most people don't know that bubble plots even exist in Excel. In this blog post, we'll walk through how to take advantage of these very effective charts! They are great for comparing three quantitative variables at once.</p>
+    </div>    
+    <div style="text-align:right">
+      <p class="continue-reading">
+        <a href="/blog/2018/03/15/make-bubble-plot-excel/" title="98% of Make a Bubble Plot in Excel still remains to read." rel="bookmark" itemprop="url">
+          Continue reading &gt;&gt;
+      </a>
+    </p>
+    </div>
+  </div>
+</div>
+
+-->
