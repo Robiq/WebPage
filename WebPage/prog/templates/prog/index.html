@@ -103,11 +103,7 @@
             
               <a href="{% url 'images:index' %}" target="_blank" class="list-inline-item list-inline-item-action col-sm-auto" alt="Portfolio">Pictures</a>
             
-	      <!--   "{ % url 'zinnia:entry_archive_index' % }"          <a href="" target="_blank"class="list-inline-item list-inline-item-action col-sm-auto disabled">Blog</a> 
-	      
-	       href="" target="_blank"
-	      -->
-              <a  style="color: lightgrey;" class="list-inline-item list-inline-item-action col-sm-auto disabled" data-toggle="tooltip" title="Coming soon!" alt="Blog">Blog</a>
+	      <a  href="{{request.build_absolute_uri}}blog" target="_blank" class="list-inline-item list-inline-item-action col-sm-auto" alt="Blog">Blog</a>
               
               <div class ="col"></div>
           
