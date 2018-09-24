@@ -74,11 +74,11 @@
 					</header>
 
 					<ul class="icons" style="color: white; padding-left: 2.5em;">
-							<li><a href="https://www.instagram.com/robinlunde/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="https://github.com/Robiq" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
-							<li><a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="icon fa-linkedin"><span class="label">Email</span></a></li>
-							<li><a href="mailto:robin@wub.no" class="icon fa-envelope-o"><span class="label">Mail Private</span></a></li>
-							<li style="color: #FF7664;	opacity: 0.65;"><a href="mailto:robin.lunde@linecorp.com" class="icon fa-envelope-o"><span class="label">Mail work</span></a></li>
+							<li><a href="https://www.instagram.com/robinlunde/" target="_blank" class="icon fa-instagram" alt="インスタグラム"><span class="label">インスタグラム</span></a></li>
+							<li><a href="https://github.com/Robiq" target="_blank" class="icon fa-github"><span class="label" alt="ギットハブ">ギットハブ</span></a></li>
+							<li><a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="icon fa-linkedin" alt="リンクトイン"><span class="label">リンクトイン</span></a></li>
+							<li><a href="mailto:robin@wub.no" class="icon fa-envelope-o" alt="メ－ル"><span class="label">メ－ル</span></a></li>
+							<li style="color: #FF7664;	opacity: 0.65;"><a href="mailto:robin.lunde@linecorp.com" class="icon fa-envelope-o"><span class="label" alt="仕事のメ－ル">仕事のメ－ル</span></a></li>
 						</ul>
 
 				<!-- Thumbnail -->
@@ -86,7 +86,7 @@
 						{% if photo_list %}
 							{% for image in photo_list %}
 								<article >
-									<a class="thumbnail" href="{{ baseUrl }}/images/fulls/{{ image.id }}.jpg" data-position="center"><img src="{{ baseUrl }}/images/thumbs/{{ image.id }}.jpg" alt="" /></a>
+									<a class="thumbnail" href="{{ baseUrl }}/images/fulls/{{ image.id }}.jpg" data-position="center"><img src="{{ baseUrl }}/images/thumbs/{{ image.id }}.jpg" alt="{{ image.comment_jp }}" /></a>
 									<div>
 										<h2 style="color: white;">  {{ image.name_jp }}</h2>
 										<div style="color: white;">

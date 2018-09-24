@@ -73,11 +73,11 @@
 					</header>
 
 					<ul class="icons" style="color: white; padding-left: 2.5em;">
-							<li><a href="https://www.instagram.com/robinlunde/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="https://github.com/Robiq" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
-							<li><a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="icon fa-linkedin"><span class="label">Email</span></a></li>
-							<li><a href="mailto:robin@wub.no" class="icon fa-envelope-o"><span class="label">Mail Private</span></a></li>
-							<li style="color: #FF7664;	opacity: 0.65;"><a href="mailto:robin.lunde@linecorp.com" class="icon fa-envelope-o"><span class="label">Mail work</span></a></li>
+							<li><a href="https://www.instagram.com/robinlunde/" target="_blank" class="icon fa-instagram" alt="instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/Robiq" target="_blank" class="icon fa-github" alt="github"><span class="label">Github</span></a></li>
+							<li><a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="icon fa-linkedin" alt="linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="mailto:robin@wub.no" class="icon fa-envelope-o" alt="mail privat"><span class="label">mail privat</span></a></li>
+							<li style="color: #FF7664;	opacity: 0.65;"><a href="mailto:robin.lunde@linecorp.com" class="icon fa-envelope-o" alt="mail jobb"><span class="label">mail jobb</span></a></li>
 						</ul>
 
 				<!-- Thumbnail -->
@@ -85,7 +85,7 @@
 						{% if photo_list %}
 							{% for image in photo_list %}
 								<article >
-									<a class="thumbnail" href="{{ baseUrl }}/images/fulls/{{ image.id }}.jpg" data-position="center"><img src="{{ baseUrl }}/images/thumbs/{{ image.id }}.jpg" alt="" /></a>
+									<a class="thumbnail" href="{{ baseUrl }}/images/fulls/{{ image.id }}.jpg" data-position="center"><img src="{{ baseUrl }}/images/thumbs/{{ image.id }}.jpg" alt="{{ image.comment_no }}" /></a>
 									<div>
 										<h2 style="color: white;">  {{ image.name_no }}</h2>
 										<div style="color: white;">
