@@ -11,12 +11,30 @@
 		<title>Robin Lunde</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="alternate" hreflang="en"
+                href="{% url 'images:selection'  cat=cat lang='en' %}" />
+                <link rel="alternate" hreflang="ja"
+                href="{% url 'images:selection'  cat=cat lang='jp' %}" />
+                <link rel="alternate" hreflang="no"
+                href="{% url 'images:selection'  cat=cat lang='no' %}" />
+                <link rel="alternate" hreflang="x-default"
+                href="{% url 'images:selection'  cat=cat lang='no' %}" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="{{ baseUrl }}/assets/css/main.css" />
 		<link rel="stylesheet" href="{{ baseUrl }}/assets/css/rob.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="{{ baseUrl }}/assets/css/noscript.css" /></noscript>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126265588-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-126265588-1');
+		</script>
 	</head>
 	<body class="is-loading-0 is-loading-1 is-loading-2">
 
@@ -45,12 +63,12 @@
 						</div>
 					</header>
 
-					<ul class="icons" style="color: white;">
+					<ul class="icons" style="color: white; padding-left: 2.5em;">
 							<li><a href="https://www.instagram.com/robinlunde/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 							<li><a href="https://github.com/Robiq" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
 							<li><a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="icon fa-linkedin"><span class="label">Email</span></a></li>
 							<li><a href="mailto:robin@wub.no" class="icon fa-envelope-o"><span class="label">Mail Private</span></a></li>
-							<li style="color: #FF7664;	opacity: 0.65;"><a href="mailto:robin@keio.jp" class="icon fa-envelope-o"><span class="label">Mail work</span></a></li>
+							<li style="color: #FF7664;	opacity: 0.65;"><a href="mailto:robin.lunde@linecorp.com" class="icon fa-envelope-o"><span class="label">Mail work</span></a></li>
 						</ul>
 
 				<!-- Thumbnail -->
