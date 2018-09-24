@@ -8,9 +8,18 @@
 {% static "/images" as baseUrl %}
 <html lang="en">
 	<head>
-		<title>Robin Lunde</title>
+		<title>Images | Robin Lunde</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<meta name="Description" content="Robin Lunde's photography portfolio. Amateur photographer. Favourite type of photography is landscape photography.">
+		<meta name="Keywords" content="Homepage, Robin, Lunde, Norway, Japan, Photography, Nature, People, Portrait, Camera, Portfolio">
+    	<meta name="author" content="Robin Lunde" >
+    	<meta property="og:title" content="Robin Lunde's Portfolio">
+		<meta property="og:description" content="Robin Lunde's personal portfolio. Please enjoy.">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://robinlunde.com/images">
+
 		<link rel="alternate" hreflang="en"
 		href="{% url 'images:selection'  cat=cat lang='en' %}" />
 		<link rel="alternate" hreflang="ja"
