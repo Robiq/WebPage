@@ -20,9 +20,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <!-- My own CSS -->
     <link rel="stylesheet" type="text/css" href="{{ baseUrl }}/assets/css/index.css">
-    <title>Robin Lunde</title>
-     <meta name="keywords" content="Homepage Robin Lunde" />
-    <meta name="author" content="Robin" />
+    <title>Robin Lunde's Homepage</title>
+
+    <meta property="og:title" content="Robin Lunde's Homepage">
+    <meta property="og:description" content="Robin Lunde's personal homepage. Computer security, Photography and information about me.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://robinlunde.com">
+    <meta name="Description" content="Robin Lunde's personal homepage. It contains contact information and CV's, a blog with computer security updates and other random content, a photography portfolio and information about me.">
+    <meta name="keywords" content="Homepage, Robin, Lunde, LINE, Programming, Norway, Japan, Security, Photography, Blog" >
+    <meta name="author" content="Robin Lunde" >
  
     <!-- Global site tag (gtag.js) - Google Analytics -->
   	  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126265588-1"></script>
@@ -52,25 +58,25 @@
         <!-- 2nd section -->
         <p>
           <div class="icon list-inline subheader">
-            <a href="https://www.instagram.com/robinlunde/" target="_blank" class=" list-inline-item space">
+            <a href="https://www.instagram.com/robinlunde/" target="_blank" class=" list-inline-item space" alt="instagram">
               <i class="fab fa-instagram"></i>
             </a>
             
-            <a href="https://github.com/Robiq" target="_blank" class="list-inline-item space">
+            <a href="https://github.com/Robiq" target="_blank" class="list-inline-item space" alt="github">
               <!-- <i class="fab fa-github-square"></i> -->
               <i class="fab fa-github"></i>
             </a>
             
-            <a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="list-inline-item space">
+            <a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="list-inline-item space" alt="linkedin">
               <!--<i class="fab fa-linkedin"></i>-->
               <i class="fab fa-linkedin-in"></i>
             </a>
             
-            <a href="mailto:robin@wub.no" data-toggle="tooltip" title="Private" class="list-inline-item space">
+            <a href="mailto:robin@wub.no" data-toggle="tooltip" title="Private" class="list-inline-item space" alt="email">
               <i class="fas fa-envelope"></i> 
             </a>
             
-            <a href="mailto:robin.lunde@linecorp.com" data-toggle="tooltip" title="Professional" class="list-inline-item space">
+            <a href="mailto:robin.lunde@linecorp.com" data-toggle="tooltip" title="Professional" class="list-inline-item space" alt="professional email">
               <i class="far fa-envelope"></i>
             </a>
           </div>
@@ -85,23 +91,23 @@
               
               <div class ="col"></div>
               
-              <a id="aboutme" href="#abme" data-toggle="collapse" class="list-inline-item list-inline-item-action col-sm-auto">About me</a>
+              <a id="aboutme" href="#abme" data-toggle="collapse" class="list-inline-item list-inline-item-action col-sm-auto" alt="About me">About me</a>
 
               <div class="dropdown col-sm-auto">
                 <a class="list-inline-item list-inline-item-action dropbtn">CV</a>
                 <div class="dropdown-content">
-                  <a href="{% static 'prog/cv_jp.pdf' %}" target="_blank">日本語</a>
-                  <a href="{% static 'prog/cv_en.pdf' %}" target="_blank">English</a>
+                  <a href="{% static 'prog/cv_jp.pdf' %}" target="_blank" alt="日本語 CV">日本語</a>
+                  <a href="{% static 'prog/cv_en.pdf' %}" target="_blank" alt="English CV">English</a>
                 </div>
               </div>
             
-              <a href="{% url 'images:index' %}" target="_blank" class="list-inline-item list-inline-item-action col-sm-auto ">Pictures</a>
+              <a href="{% url 'images:index' %}" target="_blank" class="list-inline-item list-inline-item-action col-sm-auto" alt="Portfolio">Pictures</a>
             
 	      <!--   "{ % url 'zinnia:entry_archive_index' % }"          <a href="" target="_blank"class="list-inline-item list-inline-item-action col-sm-auto disabled">Blog</a> 
 	      
 	       href="" target="_blank"
 	      -->
-              <a  style="color: lightgrey;" class="list-inline-item list-inline-item-action col-sm-auto disabled" data-toggle="tooltip" title="Coming soon!" >Blog</a>
+              <a  style="color: lightgrey;" class="list-inline-item list-inline-item-action col-sm-auto disabled" data-toggle="tooltip" title="Coming soon!" alt="Blog">Blog</a>
               
               <div class ="col"></div>
           
@@ -168,11 +174,11 @@
             </table>
             <b>My hobbies:</b><br>
             <ul class="list-inline subheader">
-              <a class="interest"> <i class="fas fa-camera"></i></a>
-              <a class="interest"> <i class="fas fa-utensils"></i></a>
-              <a class="interest"> <i class="fas fa-code"></i></a>
-              <a class="interest"> <i class="fas fa-heartbeat"></i></a>
-              <a class="interest"> <i class="fas fa-music"></i> </a>
+              <a class="interest" alt="Photography"> <i class="fas fa-camera"></i></a>
+              <a class="interest" alt="Cooking"> <i class="fas fa-utensils"></i></a>
+              <a class="interest" alt="Programming"> <i class="fas fa-code"></i></a>
+              <a class="interest" alt="Training"> <i class="fas fa-heartbeat"></i></a>
+              <a class="interest" alt="Music"> <i class="fas fa-music"></i> </a>
             </ul>
           <!-- Closing right column -->
           </div>

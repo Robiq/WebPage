@@ -8,10 +8,19 @@
 {% static "/images" as baseUrl %}
 <html lang="jp">
 	<head>
-		<title>Robin Lunde</title>
+		<title>Images | Robin Lunde</title>
 		<meta charset="utf-8" />
 		<meta name="robots" content="follow, all" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<meta name="Description" content="Robin Lunde's photography portfolio. Amateur photographer. Favourite type of photography is landscape photography.">
+		<meta name="Keywords" content="Homepage, Robin, Lunde, Norway, Japan, Photography, Nature, People, Portrait, Camera, Portfolio">
+    	<meta name="author" content="Robin Lunde" >
+    	<meta property="og:title" content="Robin Lunde's Portfolio">
+		<meta property="og:description" content="Robin Lunde's personal portfolio. Please enjoy.">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://robinlunde.com/images">
+		
 		<link rel="alternate" hreflang="en"
                 href="{% url 'images:selection'  cat=cat lang='en' %}" />
                 <link rel="alternate" hreflang="ja"
@@ -66,11 +75,11 @@
 					</header>
 
 					<ul class="icons" style="color: white; padding-left: 2.5em;">
-							<li><a href="https://www.instagram.com/robinlunde/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="https://github.com/Robiq" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
-							<li><a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="icon fa-linkedin"><span class="label">Email</span></a></li>
-							<li><a href="mailto:robin@wub.no" class="icon fa-envelope-o"><span class="label">Mail Private</span></a></li>
-							<li style="color: #FF7664;	opacity: 0.65;"><a href="mailto:robin.lunde@linecorp.com" class="icon fa-envelope-o"><span class="label">Mail work</span></a></li>
+							<li><a href="https://www.instagram.com/robinlunde/" target="_blank" class="icon fa-instagram" alt="インスタグラム"><span class="label">インスタグラム</span></a></li>
+							<li><a href="https://github.com/Robiq" target="_blank" class="icon fa-github"><span class="label" alt="ギットハブ">ギットハブ</span></a></li>
+							<li><a href="https://www.linkedin.com/in/robinlunde/" target="_blank" class="icon fa-linkedin" alt="リンクトイン"><span class="label">リンクトイン</span></a></li>
+							<li><a href="mailto:robin@wub.no" class="icon fa-envelope-o" alt="メ－ル"><span class="label">メ－ル</span></a></li>
+							<li style="color: #FF7664;	opacity: 0.65;"><a href="mailto:robin.lunde@linecorp.com" class="icon fa-envelope-o"><span class="label" alt="仕事のメ－ル">仕事のメ－ル</span></a></li>
 						</ul>
 
 				<!-- Thumbnail -->
@@ -78,7 +87,7 @@
 						{% if photo_list %}
 							{% for image in photo_list %}
 								<article >
-									<a class="thumbnail" href="{{ baseUrl }}/images/fulls/{{ image.id }}.jpg" data-position="center"><img src="{{ baseUrl }}/images/thumbs/{{ image.id }}.jpg" alt="" /></a>
+									<a class="thumbnail" href="{{ baseUrl }}/images/fulls/{{ image.id }}.jpg" data-position="center"><img src="{{ baseUrl }}/images/thumbs/{{ image.id }}.jpg" alt="{{ image.comment_jp }}" /></a>
 									<div>
 										<h2 style="color: white;">  {{ image.name_jp }}</h2>
 										<div style="color: white;">
