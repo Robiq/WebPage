@@ -22,7 +22,8 @@ urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^images/', include('images.urls')),
     url(r'^prog/', include('prog.urls')),
-    url(r'^admin/', admin.site.urls),
+    url(r'^__a__237bh438g0f178/', admin.site.urls),
+    #url(r'^admin/', admin.site.urls),
     #zinnia
     #url(r'^blog/', include('zinnia.urls')),
     #url(r'^comments/', include('django_comments.urls')),
