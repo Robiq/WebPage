@@ -121,9 +121,9 @@
 					<footer id="footer">
 						<ul class="copyright">
 							<li>&copy; Robin Lunde.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li><br>
-							&emsp; <li><a href="{% url 'images:selection'  cat=cat lang='en' %}">ENGLISH</a></li>
-							<li><a href="{% url 'images:selection'  cat=cat lang='no' %}">NORSK</a></li>
-							<li><a href="{% url 'images:selection'  cat=cat lang='jp' %}">日本語</a></li>
+							&emsp; <li><a rel="alternate" hreflang="en" href="{% url 'images:selection'  cat=cat lang='en' %}">ENGLISH</a></li>
+							<li><a rel="alternate" hreflang="no" href="{% url 'images:selection'  cat=cat lang='no' %}">NORSK</a></li>
+							<li><a rel="alternate" hreflang="jp" href="{% url 'images:selection'  cat=cat lang='jp' %}">日本語</a></li>
 						</ul>
 						{% ifnotequal err '' %}
 							<h4 style="color: red;">{{ err }}</h4>

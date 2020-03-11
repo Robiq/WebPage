@@ -4,3 +4,4 @@ WebPage/static/*
 WebPage/WebPageEnv/*
 WebPageEnv/
 zinnia-theme-bootstrap-4/
+*.sqlite3
