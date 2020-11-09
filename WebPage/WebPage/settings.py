@@ -150,6 +150,6 @@ STATIC_ROOT = os.path.join('/var/www/', 'static/')
 #
 #E-mail settings
 ADMINS = (
-    ('Robin Lunde', 'robin@wub.no'),
+    ('Robin Lunde', 'robin@robinlunde.com'),
 )
 MANAGERS = ADMINS
