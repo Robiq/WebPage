@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" async>
     <!-- Font awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <!-- Raleway font -->
@@ -100,15 +100,9 @@
               <div class ="col"></div>
               
               <a id="aboutme" href="#abme" data-toggle="collapse" class="list-inline-item list-inline-item-action col-sm-auto" alt="About me">About me</a>
-<!--
-              <div class="dropdown col-sm-auto">
-                <a class="list-inline-item list-inline-item-action dropbtn">CV</a>
-                <div class="dropdown-content">
-                  <a href="{% static 'prog/cv_jp.pdf' %}" target="_blank" alt="日本語 CV">日本語</a>
-                  <a href="{% static 'prog/cv_en.pdf' %}" target="_blank" alt="English CV">English</a>
-                </div>
-              </div>
--->            
+
+              <a href="{{request.build_absolute_uri}}storm" target="_blank" class="list-inline-item list-inline-item-action col-sm-auto" alt="My Dog">Storm</a>
+
               <a href="{% url 'images:index' %}" target="_blank" class="list-inline-item list-inline-item-action col-sm-auto" alt="Portfolio">Pictures</a>
             
 	      <a  href="{{request.build_absolute_uri}}blog" target="_blank" class="list-inline-item list-inline-item-action col-sm-auto" alt="Blog">Blog</a>
