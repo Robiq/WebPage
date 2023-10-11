@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('secret_KEY')
 
 #Prod
 DEBUG = False
-ALLOWED_HOSTS = ['95.216.138.178', '.robinlunde.com', '.robinlunde.tk','.robinlunde.cf', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', '127.0.0.1:8000', '95.216.138.178', '.robinlunde.com', '.robinlunde.tk','.robinlunde.cf', 'localhost']
 
 
 # Application definition
